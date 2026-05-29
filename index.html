@@ -1,67 +1,104 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Do List Diaries</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-</head>
-<body class="bg-[#F1F3E0] min-h-screen flex items-center justify-center p-4">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Itim&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-[#F1F3E0] min-h-screen flex items-center justify-center p-4">
     <div class="w-full max-w-2xl bg-[#A1BC98] p-8 rounded-lg shadow-xl">
-        <div class="text-5xl mb-2 animate-bounce">𖡼𖤣𖥧𖡼𓋼𖤣𖥧𓋼𓍊˖</div>
-        <h1 class="text-4xl font-bold mb-6 text-center tracking-widest uppercase">To Do List Diaries</h1>
-        
-        <form id="todoForm" class="flex flex-wrap gap-2 mb-4">
-            <input type="text" id="activity" placeholder="Add activity" class="flex-1 p-2 rounded-lg bg-[#E3E7D3] outline-none" required>
-            
-            <select id="tag" class="p-2 rounded-lg bg-[#E3E7D3] outline-none text-sm">
-                <option value="College">College</option>
-                <option value="Daily Life">Daily Life</option>
-                <option value="Bootcamp">Bootcamp</option>
-                <option value="Project">Project</option>
-                <option value="Others">Others</option>
-            </select>
+      <div class="text-5xl mb-2 animate-bounce">𖡼𖤣𖥧𖡼𓋼𖤣𖥧𓋼𓍊˖</div>
+      <h1 class="text-4xl font-bold mb-6 text-center tracking-widest uppercase">
+        To Do List Diaries
+      </h1>
 
-            <input type="date" id="date" class="p-2 rounded-lg bg-[#E3E7D3] outline-none" required>
-            <button type="submit" class="bg-[#778873] text-white px-6 py-2 rounded-lg font-bold">+</button>
-        </form>
+      <form id="todoForm" class="flex flex-wrap gap-2 mb-4">
+        <input
+          type="text"
+          id="activity"
+          placeholder="Add activity"
+          class="flex-1 p-2 rounded-lg bg-[#E3E7D3] outline-none"
+          required
+        />
 
-        <div class="flex justify-between mb-6">
-            <select id="filterSelect" class="bg-[#778873] text-white px-4 py-1 rounded text-sm font-semibold uppercase outline-none cursor-pointer">
-                <option value="All">FILTER: ALL</option>
-                <option value="College">College</option>
-                <option value="Daily Life">Daily Life</option>
-                <option value="Bootcamp">Bootcamp</option>
-                <option value="Project">Project</option>
-                <option value="Others">Others</option>
-            </select>
-            
-            <button id="deleteAll" class="bg-[#778873] text-white px-4 py-1 rounded text-sm font-semibold uppercase">Delete All</button>
-        </div>
+        <select
+          id="tag"
+          class="p-2 rounded-lg bg-[#E3E7D3] outline-none text-sm"
+        >
+          <option value="College">College</option>
+          <option value="Daily Life">Daily Life</option>
+          <option value="Bootcamp">Bootcamp</option>
+          <option value="Project">Project</option>
+          <option value="Others">Others</option>
+        </select>
 
-        <div class="bg-[#E3E7D3] rounded-lg overflow-hidden">
-            <table class="w-full text-center">
-                <thead class="bg-[#7A8A71] text-white text-xs uppercase">
-                    <tr>
-                        <th class="p-4">Task</th>
-                        <th class="p-4">Tag</th>
-                        <th class="p-4">Date</th>
-                        <th class="p-4">Status</th>
-                        <th class="p-4">Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="tableBody">
-                    <tr id="noTask">
-                        <td colspan="5" class="p-6 text-center text-[#5B7054] italic bg-white">No task found</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <input
+          type="date"
+          id="date"
+          class="p-2 rounded-lg bg-[#E3E7D3] outline-none"
+          required
+        />
+        <button
+          type="submit"
+          class="bg-[#778873] text-white px-6 py-2 rounded-lg font-bold"
+        >
+          +
+        </button>
+      </form>
+
+      <div class="flex justify-between mb-6">
+        <select
+          id="filterSelect"
+          class="bg-[#778873] text-white px-4 py-1 rounded text-sm font-semibold uppercase outline-none cursor-pointer"
+        >
+          <option value="All">FILTER: ALL</option>
+          <option value="College">College</option>
+          <option value="Daily Life">Daily Life</option>
+          <option value="Bootcamp">Bootcamp</option>
+          <option value="Project">Project</option>
+          <option value="Others">Others</option>
+        </select>
+
+        <button
+          id="deleteAll"
+          class="bg-[#778873] text-white px-4 py-1 rounded text-sm font-semibold uppercase"
+        >
+          Delete All
+        </button>
+      </div>
+
+      <div class="bg-[#E3E7D3] rounded-lg overflow-hidden">
+        <table class="w-full text-center">
+          <thead class="bg-[#7A8A71] text-white text-xs uppercase">
+            <tr>
+              <th class="p-4">Task</th>
+              <th class="p-4">Tag</th>
+              <th class="p-4">Date</th>
+              <th class="p-4">Status</th>
+              <th class="p-4">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr id="noTask">
+              <td
+                colspan="5"
+                class="p-6 text-center text-[#5B7054] italic bg-white"
+              >
+                No task found
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-    
+
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>

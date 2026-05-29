@@ -1,11 +1,11 @@
-h1{
-    font-family: 'Playfair Display', serif;
-    letter-spacing: 1px;
+h1 {
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1px;
 }
-body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-tr{
-    transition: all 0.3s ease;
+tr {
+  transition: all 0.3s ease;
 }
